@@ -40,5 +40,12 @@ steps:
     appType: 'webAppLinux'
     WebAppName: 'my-app-name28'
     packageForLinux: '$(build.artifactstagingdirectory)/**/*.war'
-    RuntimeStack: 'TOMCAT|10.0-java11'
+   
+- task: AzureAppServiceManage@0
+  inputs:
+    azureSubscription: 'Azure subscription 1 (46021e98-3fb9-4ffd-8fac-2d22939e0c67)'
+    Action: 'Swap Slots'
+    WebAppName: 'my-app-name28'
+    ResourceGroupName: 'myapp-rg'
+    SourceSlot: 'staging'
     
