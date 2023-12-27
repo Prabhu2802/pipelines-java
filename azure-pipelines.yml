@@ -25,7 +25,7 @@ steps:
 - task: CopyFiles@2
   inputs:
     SourceFolder: 'target'
-    Contents: '**/target/*.?(war|jar)'
+    Contents: '*.?(war|jar)'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
