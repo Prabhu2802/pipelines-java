@@ -40,4 +40,4 @@ steps:
     appType: 'webAppLinux'
     WebAppName: 'my-app-name28'
     packageForLinux: '$(build.artifactstagingdirectory)/**/*.war'
-    RuntimeStack: 'TOMCAT|8.5-jre8'
+    
