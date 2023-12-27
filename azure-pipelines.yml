@@ -24,9 +24,12 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '**/target/'
+    SourceFolder: 'target'
     Contents: '**/target/*.?(war|jar)'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-- upload: $(Build.ArtifactStagingDirectory)
-  artifact: drop
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+  
